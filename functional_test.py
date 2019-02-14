@@ -20,6 +20,8 @@ class NewVisitorTest(unittest.TestCase):
 
         # 웹 페이지 타이틀과 헤더가 'To-Do'를 표시하고 있다.
         self.assertIn('To-Do', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('To-Do', header_text)
         # self.fail('Finish the test!')
         '''
         implicitly_wait가 동작하는 경우: 원하는 값을 찾지 못할 때 
