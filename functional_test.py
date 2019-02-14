@@ -15,15 +15,16 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_start_a_list_and_retrieve_it_later(self):
         # 탁영은 멋진 작업 목록 온라인 앱이 나왔다는 소식을 듣고
         # 해당 웹 사이트를 확인하러 간다.
-        self.browser.get('http://www.naver.com')
+        self.browser.get('http://localhost:8000')
 
         # 웹 페이지 타이틀과 헤더가 'To-Do'를 표시하고 있다.
-
-        ''' implicitly_wait가 동작하는 경우: 원하는 값을 찾지 못할 때 '''
-        # aa = self.browser.find_element_by_css_selector('div.helloworld')
-        # self.assertIn('To-Do', aa)
         self.assertIn('To-Do', self.browser.title)
         self.fail('Finish the test!')
+        '''
+        implicitly_wait가 동작하는 경우: 원하는 값을 찾지 못할 때 
+        aa = self.browser.find_element_by_css_selector('div.helloworld')
+        self.assertIn('To-Do', aa)
+        '''
 
         # 그는 바로 작업을 추가하기로 한다.
 
